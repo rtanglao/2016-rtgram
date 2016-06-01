@@ -10,8 +10,10 @@ cd THUMBNAIL_150x150
 ```
 2. print to zazzle graphic
 ```sh
-cat 31may2016avgcolour.txt | ../printZazzle2100x800.rb  > 31May2016-834pm-zazzle-2100x800-1hexcolourperline
+cat 31may2016avgcolour.txt | ../printZazzle2100x800.rb \
+> 31May2016-834pm-zazzle-2100x800-1hexcolourperline
 ```
+
 3. create RAW file
 xxd -r -p 31May2016-834pm-zazzle-2100x800-1hexcolourperline >
 31May2016-834pm-zazzle-2100x800.raw (or.rgb, photoshop requires .raw)
