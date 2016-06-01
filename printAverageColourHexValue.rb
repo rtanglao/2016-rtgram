@@ -3,7 +3,10 @@ require 'rubygems'
 require 'json'
 require 'pp'
 require 'rmagick'
-Dir.glob('*_n.jpg') do |jpg_file|
+allowed_extensions = %w[.jpg .jpeg .png]
+Dir.foreach('.') do |jpg_file|
+  next if jpg_file == '.' or jpg_file == '..'
+  next if !allowed_extensions.any?{ |ext| jpg_file.end_with?(ext) }
   $stderr.printf("file:%s\n", jpg_file)
   img =  Magick::Image.read(jpg_file).first
   pix = img.scale(1, 1)
