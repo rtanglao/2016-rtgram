@@ -1,6 +1,11 @@
 # 2016-rtgram
 2016 vancouver instagram 
 
+## 16July2016
+```sh
+mkdir THUMBNAIL_5x5
+./create5x5thumbnails.rb THUMBNAIL_150x150 THUMBNAIL_5x5/
+```
 ## 31May2016
 
 1. get average colour of all thumbails
