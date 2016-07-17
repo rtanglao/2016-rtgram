@@ -10,12 +10,14 @@ cd THUMBNAIL_150x150
 ```
 2. print to zazzle graphic
 ```sh
-cat 31may2016avgcolour.txt | ../printZazzle2100x800.rb  > 31May2016-834pm-zazzle-2100x800-1hexcolourperline
+cat 31may2016avgcolour.txt | ../printZazzle2100x800.rb \
+> 31May2016-834pm-zazzle-2100x800-1hexcolourperline
 ```
 3. create RAW file
+```sh
 xxd -r -p 31May2016-834pm-zazzle-2100x800-1hexcolourperline >
 31May2016-834pm-zazzle-2100x800.raw (or.rgb, photoshop requires .raw)
-
+```
 4. open in photoshop save as png, no compression 2100x800 3 bytes per pixel
 
 ## 29May 2016
