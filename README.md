@@ -1,6 +1,12 @@
 # 2016-rtgram
 2016 vancouver instagram 
 
+## 17July2016
+
+1. ```cd THUMBNAIL_5x5```
+2. ```ls -1 | head -16800 >first16800.txt # 2100/5 = 420x 800/5=40 420x40=16800```
+3. ```gm montage -verbose -adjoin -tile 420x40 +frame +shadow +label -adjoin -geometry '5x5+0+0<' @first16800.txt first16800photos.png```
+
 ## 16July2016
 ```sh
 mkdir THUMBNAIL_5x5
