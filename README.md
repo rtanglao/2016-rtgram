@@ -3,6 +3,8 @@
 
 ## 17July2016
 
+Creating a zazzle graphic (which seemed to work fine in yoshirt):
+
 1. ```cd THUMBNAIL_5x5```
 2. ```ls -1 | head -67200 >first67200.txt # 2100/5 = 420x 800/5=160 420x160=67200, zazzle size: 2100px X 800px``` Riffing off of https://gist.github.com/rtanglao/8988d2602238661b3138
 3. ```gm montage -verbose -adjoin -tile 420x160 +frame +shadow +label -adjoin -geometry '5x5+0+0<' @first67200.txt first67200photos.png```
