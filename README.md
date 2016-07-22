@@ -1,6 +1,10 @@
 # 2016-rtgram
 2016 vancouver instagram 
 
+## 22 July 2016
+
+idea: square pie charts and/or regular round pie charts!
+
 ## 17July2016
 
 Creating a zazzle graphic (which seemed to work fine in yoshirt):
