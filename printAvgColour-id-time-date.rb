@@ -29,26 +29,34 @@ end
 photosColl = db[:photos]
 allowed_extensions = %w[.jpg .jpeg .png]
 # 0000001-1152722080165873450_545005592-923801_223885477945396_829374774_n.jpg
+day_number = 0
+previous_date_str = ""
+printf("colour,id,dayofweek-month-dayofmonth,daynumber\n")
 Dir.foreach('.') do |jpg_file|
   next if jpg_file == '.' or jpg_file == '..'
   next if !allowed_extensions.any?{ |ext| jpg_file.end_with?(ext) }
-  $stderr.printf("file:%s\n", jpg_file)
+  #$stderr.printf("file:%s\n", jpg_file)
   begin
     img =  Magick::Image.read(jpg_file).first
   rescue Magick::ImageMagickError
     next
   end
-  printf "%s\n", jpg_file
+  # printf "%s\n", jpg_file
   id = jpg_file.partition("-")[2].partition("-")[0]
-  printf "id:%s\n", id
+  #printf "id:%s\n", id
   
   photo = photosColl.find({ "id" => id}).\
           projection({ "id" => 1, "datetaken" => 1}).limit(1).first()
-  pp photo
-  printf("photo id:%s datetaken:%s\n", photo["id"], photo["datetaken"].to_s)
-  exit
-  # pix = img.scale(1, 1)
-  # averageColor = pix.pixel_color(0,0)
-  # printf("#%2.2X%2.2X%2.2X\n", averageColor.red/257,
-  #        averageColor.blue/257,  averageColor.blue/257)
+  #pp photo
+  time_str = photo["datetaken"].localtime.strftime("%a%b%-d")
+  if time_str != previous_date_str
+    day_number += 1
+    previous_date_str = time_str
+  end
+  pix = img.scale(1, 1)
+  averageColour = pix.pixel_color(0,0)
+  printf("#%2.2X%2.2X%2.2X,%s,%s,%d\n",
+         averageColour.red/257, averageColour.blue/257,  averageColour.blue/257,
+         photo["id"], time_str, day_number)
+
 end
