@@ -1,6 +1,13 @@
 # 2016-rtgram
 2016 vancouver instagram 
 
+##27 July 2016
+create files for holy
+
+1. ```./AddHourToAvgColour-id-time-date-csv.rb  ./THUMBNAIL_150x150/23july2016-ig-van-2016-jan-may-2016-avgcolor-id-mf-month-day-daynum.csv >27july2016-ig-van-2016-jan-may-2016-avgcolour-id-mf-month-day-daynum-unixtime-hour.csv```
+1.``` grep FriJan1 27july2016-ig-van-2016-jan-may-2016-avgcolour-id-mf-month-day-daynum-unixtime-hour.csv >01january2016-ig-avgcolour-id-mf-month-day-daynum-unixtime-hour.csv``` #get a file for just january 1, 2016
+
+
 ## 23 July 2016
 
 1. ```cd THUMBNAIL_150x150```
