@@ -12,7 +12,7 @@ create files for holy
 
 1. ```cd THUMBNAIL_150x150```
 1. ```../printAvgColour-id-time-date.rb >23july2016-ig-van-2016-jan-may-2016-avgcolor-id-mf-month-day-daynum.csv``` # CSV file for R pie chart
-1. ````cat 23july2016-ig-van-2016-jan-may-2016-avgcolor-id-mf-month-day-daynum.csv | grep Jan >2016-january-2016-avgcolor-id-mf-month-day-daynum.csv``` # file for small multiples for each of the 31 days of January
+1. ```cat 23july2016-ig-van-2016-jan-may-2016-avgcolor-id-mf-month-day-daynum.csv | grep Jan >2016-january-2016-avgcolor-id-mf-month-day-daynum.csv``` # file for small multiples for each of the 31 days of January
 
 ## 22 July 2016
 
